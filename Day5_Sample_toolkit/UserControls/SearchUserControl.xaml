@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Day5_Sample_toolkit.UserControls.SearchUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Day5_Sample_toolkit.UserControls"
+             xmlns:vm="clr-namespace:Day5_Sample_toolkit.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:SearchUserViewModel></vm:SearchUserViewModel>
+    </UserControl.DataContext>
+    <Grid>
+        <TextBox Margin="15"
+                 Height="1cm"
+                 Text="{Binding TextSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>
