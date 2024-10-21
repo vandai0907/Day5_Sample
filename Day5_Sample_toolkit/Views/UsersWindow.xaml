@@ -4,9 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Day5_Sample_toolkit.Views"
+        xmlns:vm="clr-namespace:Day5_Sample_toolkit.ViewModels"
+        xmlns:uc="clr-namespace:Day5_Sample_toolkit.UserControls"
         mc:Ignorable="d"
-        Title="UsersWindow" Height="450" Width="800">
+        Title="UserWindow"
+        Height="390"
+        Width="700">
+    <Window.DataContext>
+        <vm:UserViewModel></vm:UserViewModel>
+    </Window.DataContext>
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5cm"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    VerticalAlignment="Top">
+            <uc:SearchUserControl ></uc:SearchUserControl>
+            <Border BorderThickness="0 0 0 1"
+                    BorderBrush="Gray"/>
+            <uc:NavbarUserControl></uc:NavbarUserControl>
+            <Button Margin="15"
+                    Height="1cm"
+                    Content="Add"
+                    Command="{Binding AddCommand}"/>
+        </StackPanel>
+        <uc:FormUserControl Grid.Column="1"></uc:FormUserControl>
     </Grid>
 </Window>
